@@ -25,7 +25,7 @@ function addItem() {
         </div>
         <div class="input">
           <input type="text" placeholder="Enter Item..." id="item" />
-          <input type="number" placeholder="Enter Amount..." id="amount" />
+          <input type="number" placeholder="Amount..." id="amount" />
           <button id="add-input">Add</button>
         </div>
            <div class="list-container" id="list-container">   
@@ -47,7 +47,7 @@ function addItem() {
     let amountValue = parseFloat(document.getElementById("amount").value);
     let salaryValue = parseFloat(document.getElementById("total-salary").value);
     let message = document.getElementById("message");
-
+    let inputOut = document.getElementById("total-left");
     if (itemValue && amountValue && salaryValue) {
       let list = document.getElementById("list-container");
       //creating a new list for the output
@@ -66,6 +66,7 @@ function addItem() {
       if (totalLeft < totalExpenses) {
         message.style.color = "#d62828";
         message.innerText = "You are over budget";
+        inputOut.style.borderColor = "#d62828";
       } else {
         message.innerText = "Nice! You are Within Budget!";
         message.style.color = "#d62828";

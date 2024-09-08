@@ -47,12 +47,17 @@ input {
   font-weight: bold;
   font-size: 16px;
   color: #283618;
+  width: 75%;
 }
 #output-item,
 #output-number {
   color: #780000;
   font-weight: 700;
   font-size: 13px;
+  width: 33%;
+}
+#total-left {
+  font-weight: bold;
 }
 ::placeholder {
   font-size: 14px;
@@ -71,10 +76,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #item {
-  width: 40%;
+  width: 38%;
 }
+
 #amount {
-  width: 25%;
+  width: 15%;
 }
 button {
   padding: 9px 10px;
