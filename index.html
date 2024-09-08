@@ -26,7 +26,21 @@
     <h1>Budget Tracker</h1>
     <h3>Let's track your monthly budget...</h3>
     <div class="container">
-      <i class="fa-solid fa-plus"></i>
+      <i class="fa-solid fa-plus" id="add-btn"></i>
+      <div id="input-content-container">
+        <div class="salary">
+          <input
+            type="number"
+            id="total-salary"
+            placeholder="Enter your Salary..."
+          />
+        </div>
+        <div class="input">
+          <input type="text" placeholder="Enter Item..." id="item" />
+          <input type="number" placeholder="Enter Amount..." id="amount" />
+        </div>
+      </div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
