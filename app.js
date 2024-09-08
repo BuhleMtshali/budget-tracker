@@ -30,13 +30,21 @@ function addItem() {
         </div>
            <div class="list-container" id="list-container">   
           </div>
+          <div class="summary">
+                        <label>Total Expenses:</label>
+                        <input type="number" id="total-expenses" value="0" readonly />
+                        <label>Amount Left:</label>
+                        <input type="number" id="total-left" value="0" readonly />
+                        </div>
+                        </div>
       `;
   inputContainer.innerHTML = inputField;
+  let totalExpenses = 0;
   //second function
   document.getElementById("add-input").addEventListener("click", () => {
     let itemValue = document.getElementById("item").value;
-    let amountValue = document.getElementById("amount").value;
-    let salaryValue = document.getElementById("total-salary").value;
+    let amountValue = parseFloat(document.getElementById("amount").value);
+    let salaryValue = parseFloat(document.getElementById("total-salary").value);
 
     if (itemValue && amountValue && salaryValue) {
       let list = document.getElementById("list-container");
@@ -44,8 +52,16 @@ function addItem() {
       let newItem = `<div class="list-item">
                         <input type="text" id="output-item" value="${itemValue}" readonly />
                         <input type="number" id="output-number" value="${amountValue}" readonly />
-                     </div>`;
+                        `;
       list.innerHTML += newItem;
+      //updating total expenses
+      totalExpenses += amountValue;
+      document.getElementById("total-expenses").value = totalExpenses;
+
+      //calculating remaining salary
+      let totalLeft = salaryValue - totalExpenses;
+      document.getElementById("total-left").value = totalLeft;
+
       //clearing the input fields after adding
 
       document.getElementById("item").value = "";
