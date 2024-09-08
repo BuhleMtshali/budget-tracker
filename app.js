@@ -28,12 +28,36 @@ function addItem() {
           <input type="number" placeholder="Enter Amount..." id="amount" />
           <button id="add-input">Add</button>
         </div>
-            <div class="list-container">
-            <input type="text" id="output-item" />
-          <input type="number" id="output-number" />
+           <div class="list-container" id="list-container">   
           </div>
       `;
   inputContainer.innerHTML = inputField;
-  addToList();
+  //second function
+  document.getElementById("add-input").addEventListener("click", () => {
+    let itemValue = document.getElementById("item").value;
+    let amountValue = document.getElementById("amount").value;
+
+    if (itemValue && amountValue) {
+      let list = document.getElementById("list-container");
+      //creating a new list for the output
+      let newItem = `<div class="list-item">
+                        <input type="text" id="output-item" value="${itemValue}" readonly />
+                        <input type="number" id="output-number" value="${amountValue}" readonly />
+                     </div>`;
+      list.innerHTML += newItem;
+      //clearing the input fields after adding
+
+      document.getElementById("item").value = "";
+      document.getElementById("amount").value = "";
+    } else {
+      alert("Please fill out both fields before adding.");
+    }
+  });
 }
 //second event listener
+/*function addTodoList() {
+  let list = document.getElementById("list-container");
+  let listContainer = `<input type="text" id="output-item" />
+          <input type="number" id="output-number" />`;
+  list.innerHTML = listContainer;
+}*/
