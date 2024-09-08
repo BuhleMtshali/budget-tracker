@@ -48,6 +48,7 @@ function addItem() {
     let salaryValue = parseFloat(document.getElementById("total-salary").value);
     let message = document.getElementById("message");
     let inputOut = document.getElementById("total-left");
+    //if there is an input value
     if (itemValue && amountValue && salaryValue) {
       let list = document.getElementById("list-container");
       //creating a new list for the output
@@ -63,6 +64,7 @@ function addItem() {
       //calculating remaining salary
       let totalLeft = salaryValue - totalExpenses;
       document.getElementById("total-left").value = totalLeft;
+      //checking over-budget or below budget
       if (totalLeft < totalExpenses) {
         message.style.color = "#d62828";
         message.innerText = "You are over budget";
@@ -80,10 +82,3 @@ function addItem() {
     }
   });
 }
-//second event listener
-/*function addTodoList() {
-  let list = document.getElementById("list-container");
-  let listContainer = `<input type="text" id="output-item" />
-          <input type="number" id="output-number" />`;
-  list.innerHTML = listContainer;
-}*/
