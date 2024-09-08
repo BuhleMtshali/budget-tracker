@@ -1,7 +1,18 @@
 let inputContainer = document.getElementById("input-content-container");
 const addBtn = document.getElementById("add-btn");
-addBtn.addEventListener("click", addItem);
+addBtn.addEventListener("click", toggleForm);
+
 //start of function
+let isFormVisible = false;
+
+function toggleForm() {
+  if (!isFormVisible) {
+    addItem();
+  } else {
+    inputContainer.innerHTML = "";
+  }
+  isFormVisible = !isFormVisible;
+}
 
 function addItem() {
   let inputField = `
@@ -17,10 +28,12 @@ function addItem() {
           <input type="number" placeholder="Enter Amount..." id="amount" />
           <button id="add-input">Add</button>
         </div>
-        <div class="list-container">
-          <input type="text" id="output-item" />
+            <div class="list-container">
+            <input type="text" id="output-item" />
           <input type="number" id="output-number" />
-        </div>
+          </div>
       `;
   inputContainer.innerHTML = inputField;
+  addToList();
 }
+//second event listener
