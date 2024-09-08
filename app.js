@@ -36,8 +36,9 @@ function addItem() {
   document.getElementById("add-input").addEventListener("click", () => {
     let itemValue = document.getElementById("item").value;
     let amountValue = document.getElementById("amount").value;
+    let salaryValue = document.getElementById("total-salary").value;
 
-    if (itemValue && amountValue) {
+    if (itemValue && amountValue && salaryValue) {
       let list = document.getElementById("list-container");
       //creating a new list for the output
       let newItem = `<div class="list-item">
