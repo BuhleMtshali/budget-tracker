@@ -35,6 +35,7 @@ function addItem() {
                         <input type="number" id="total-expenses" value="0" readonly />
                         <label>Amount Left:</label>
                         <input type="number" id="total-left" value="0" readonly />
+                        <p id="message"></p>
                         </div>
                         </div>
       `;
@@ -45,6 +46,7 @@ function addItem() {
     let itemValue = document.getElementById("item").value;
     let amountValue = parseFloat(document.getElementById("amount").value);
     let salaryValue = parseFloat(document.getElementById("total-salary").value);
+    let message = document.getElementById("message");
 
     if (itemValue && amountValue && salaryValue) {
       let list = document.getElementById("list-container");
@@ -61,7 +63,13 @@ function addItem() {
       //calculating remaining salary
       let totalLeft = salaryValue - totalExpenses;
       document.getElementById("total-left").value = totalLeft;
-
+      if (totalLeft < totalExpenses) {
+        message.style.color = "#d62828";
+        message.innerText = "You are over budget";
+      } else {
+        message.innerText = "Nice! You are Within Budget!";
+        message.style.color = "#d62828";
+      }
       //clearing the input fields after adding
 
       document.getElementById("item").value = "";

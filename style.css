@@ -91,3 +91,7 @@ label {
   color: var(--bg-color);
   display: block;
 }
+#message {
+  font-size: 18px;
+  font-weight: bold;
+}
