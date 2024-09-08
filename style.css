@@ -1,3 +1,22 @@
+:root {
+  --bg-color: #344e41;
+  --font-color: #dad7cd;
+  --heading-color: #84a59d;
+}
+
 body {
-  font-family: "Mulish", sans-serif;
+  font-family: "Playfair Display", serif;
+  background-color: var(--heading-color);
+  text-align: center;
+}
+h1 {
+  font-family: "Playfair Display", serif;
+  color: var(--bg-color);
+  font-size: 50px;
+  margin-bottom: 0;
+}
+h3 {
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--font-color);
 }
